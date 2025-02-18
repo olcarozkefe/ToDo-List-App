@@ -1,0 +1,29 @@
+
+<div class="parent">
+  <div class="container">
+    <form class="form" [formGroup]="registerForm" (ngSubmit)="register()">
+      <h1>Register</h1>
+
+      <div class="input-box">
+        <input type="text" formControlName="username" placeholder="Username">
+        <i class='bx bx-user'></i>
+      </div>
+
+      <div class="input-box">
+        <input type="email" formControlName="email" placeholder="Email">
+        <i class='bx bx-envelope'></i>
+      </div>
+
+      <div class="input-box">
+        <input type="password" formControlName="password" placeholder="Password">
+        <i class='bx bx-lock-alt'></i>
+      </div>
+
+      <button class="btn" type="submit">Register</button>
+      <div class="login">
+        <p>Already have an account? <br> <a routerLink="/login">Login</a></p>
+      </div>
+    </form>
+
+  </div>
+</div>

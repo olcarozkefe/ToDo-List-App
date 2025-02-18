@@ -1,0 +1,41 @@
+
+<div class="todo-container">
+  <div class="flex flex-wrap align-items-center justify-content-center" style="min-height:120px">
+    <div>
+      <h1 style="font-style: italic;  font-family: 'Cambria Math'">To-Do List App</h1>
+    </div>
+  </div>
+
+  <div class="add-todo">
+    <input
+      type="text"
+      [(ngModel)]="newTodo"
+      placeholder="Add a new To-Do"  style="color: white" />
+    <button (click)="addTodo()">Add</button>
+  </div>
+
+
+  <ul class="todo-list">
+    <li *ngFor="let todo of todos">
+      <span [ngStyle]="{ 'text-decoration': todo.completed ? 'line-through' : 'none', 'color': todo.completed ? '#999' : 'black' }">
+        {{ todo.title }}
+      </span>
+      <div class="actions">
+        <button class="done-btn" (click)="toggleCompletion(todo)" [disabled]="todo.completed">
+          Done
+        </button>
+        <button class="delete-btn" (click)="deleteTodo(todo.id)">
+          Delete
+        </button>
+      </div>
+    </li>
+  </ul>
+
+
+  <button class="logout-btn" (click)="logout()">Logout</button>
+
+<!--  <div class="date-container">{{ currentDate }}</div>-->
+
+</div>
+
+
